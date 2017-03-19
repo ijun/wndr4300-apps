@@ -6,9 +6,9 @@ services:
   - docker
 
 before_install:
-  - docker pull ijun/wndr43-lede-sdk
+  - docker pull ijun/wndr4300-lede-sdk
   - docker run -t -v "$TRAVIS_BUILD_DIR:/home/mockbuilder/sdk/package/custom" -i ijun/wndr4300-lede-sdk sudo -iu mockbuilder
 
 script:
   - cd sdk
-  - make package/shadowsocks-libev V=99
+  - make package/shadowsocks-libev/compile V=99
